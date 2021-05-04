@@ -16,7 +16,7 @@
   "scripts": {
     "test": "jest",
     "test:cov": "npm run test -- --coverage",
-    "lint": "standard --fix ./*.js",
+    "lint": "eslint --fix ./*.js",
     "start": "npm run test",
     "pretest": "npm run lint",
     "docs": "npm run docs:readme && npm run docs:html",
@@ -30,18 +30,21 @@
   },
   "author": "Tiaan du Plessis",
   "contributors": [
-    "Abhinav Kasamsetty"
+    "Abhinav Kasamsetty",
+    "Kenska"
   ],
   "devDependencies": {
-    "documentation": "12.0.2",
+    "@types/jest": "^26.0.23",
+    "@typescript-eslint/eslint-plugin": "^4.22.1",
+    "@typescript-eslint/parser": "^4.22.1",
     "dotenv": "7.0.0",
+    "eslint": "^7.25.0",
     "husky": "3.0.0",
     "jest": "24.8.0",
-    "jest-chain": "1.1.2",
-    "jest-extended": "^0.11.2",
-    "standard": "14.1.0"
+    "typescript": "^4.2.4"
   },
   "dependencies": {
+    "@types/dotenv": "^8.2.0",
     "node-fetch": "^2.6.0",
     "qs": "^6.7.0"
   },
@@ -55,11 +58,13 @@
     "wrapper",
     "coinmarketcap",
     "bitcoin",
-    "cryptocurrency"
+    "cryptocurrency",
+    "crypto",
+    "market"
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint"
+      "pre-commit": "yarn lint"
     }
   }
 }
